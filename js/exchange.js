@@ -15,8 +15,6 @@ function ExchangeViewModel() {
             const intl = new Intl.NumberFormat('en').format(self.value());
             const result = parseFloat(intl) * body.rates[self.coinReceiver()];
 
-            console.log(parseFloat(intl));
-
             if (self.coinReceiver() === 'AUD') {
                 self.result(`A$ ${result.toFixed(2)}`);
             } else if (self.coinReceiver() === 'BRL') {
