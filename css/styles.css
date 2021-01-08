@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+}
+
+.card-container {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-exchange {
+    height: 370px;
+    width: 100%;
+    padding: 0px 10px;
+}
+
+.btn-convert {
+    width: 200px;
+}
+
+.value {
+    font-size: calc(1rem + 1vw);
+    font-weight: 300;
+    line-height: 1.2;
+}
