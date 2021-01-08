@@ -8,15 +8,15 @@
         <title>Exchange KnockoutJS</title>
     </head>
     <body>
-        <div class="container card-container">
+        <div id="app" class="container card-container">
             <div class="card-exchange card shadow p-3 mb-5 bg-white rounded">
                 <div class="d-flex justify-content-center mt-2 mb-5">
                     <h1 class="display-5">EXCHANGE</h1>
                 </div>
-                <form>
+                <form data-bind="submit: submit">
                     <div class="row">
                         <div class="col-md-5 col-sm-12">
-                            <select class="form-select">
+                            <select data-bind="value: coinSource, disable: loading" class="form-select">
                                 <option value="AUD">AUD - Dólar Australiano</option>
                                 <option value="BRL">BRL - Real Brasileiro</option>
                                 <option value="CAD">CAD - Dólar Canadense</option>
@@ -31,7 +31,7 @@
                             <i class="bi bi-arrow-left-right"></i>
                         </div>
                         <div class="col-md-5 col-sm-12">
-                            <select class="form-select">
+                            <select data-bind="value: coinReceiver, disable: loading" class="form-select">
                                 <option value="AUD">AUD - Dólar Australiano</option>
                                 <option value="BRL">BRL - Real Brasileiro</option>
                                 <option value="CAD">CAD - Dólar Canadense</option>
@@ -46,19 +46,21 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-floating mt-3 mb-2">
-                                <input id="floatingValue" type="number" class="form-control" placeholder="0,00" required />
+                                <input data-bind="value: value, disable: loading" id="floatingValue" type="number" class="form-control" placeholder="0,00" required />
                                 <label for="floatingValue">Valor</label>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary btn-convert">Converter</button>
+                        <button data-bind="disable: loading" type="submit" class="btn btn-primary btn-convert">Converter</button>
                     </div>
                 </form>
                 <div class="d-flex justify-content-center mt-3 mb-3">
-                    <p class="value">R$ 10,00</p>
+                    <p data-bind="text: result" class="value"></p>
                 </div>
             </div>
         </div>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js'></script>
+        <script type="text/javascript" src="js/exchange.js"></script> 
     </body>
 </html>
