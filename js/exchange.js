@@ -1,6 +1,17 @@
 function ExchangeViewModel() {
     var self = this;
-    
+
+    self.coins = [
+        {id: 'AUD', name: 'AUD - Dólar Australiano'},
+        {id: 'BRL', name: 'BRL - Real Brasileiro'},
+        {id: 'CAD', name: 'CAD - Dólar Canadense'},
+        {id: 'EUR', name: 'EUR - Euro'},
+        {id: 'GBP', name: 'GBP - Libra Esterlina'},
+        {id: 'JPY', name: 'JPY - Iene Japonês'},
+        {id: 'MXN', name: 'MXN - Peso Mexicano'},
+        {id: 'USD', name: 'USD - Dólar Americano'},
+    ];
+
     self.coinSource = ko.observable();
     self.coinReceiver = ko.observable();
     self.value = ko.observable();
@@ -21,20 +32,20 @@ function ExchangeViewModel() {
                 self.result(`R$ ${result.toFixed(2)}`);
             } else if (self.coinReceiver() === 'CAD') {
                 self.result(`C$ ${result.toFixed(2)}`);
-            } else if (self.coinReceiver() == 'EUR') {
+            } else if (self.coinReceiver() === 'EUR') {
                 self.result(`€ ${result.toFixed(2)}`);
-            } else if (self.coinReceiver() == 'GBP') {
+            } else if (self.coinReceiver() === 'GBP') {
                 self.result(`£ ${result.toFixed(2)}`);
-            } else if (self.coinReceiver() == 'JPY') {
+            } else if (self.coinReceiver() === 'JPY') {
                 self.result(`¥ ${result.toFixed(2)}`);
-            } else if (self.coinReceiver() == 'MXN') {
+            } else if (self.coinReceiver() === 'MXN') {
                 self.result(`$ ${result.toFixed(2)}`);
             } else {
                 self.result(`US$ ${result.toFixed(2)}`);
             }
 
             self.loading(false);
-        });
+        }).catch(() => self.loading(false));
     };
 };
 

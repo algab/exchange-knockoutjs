@@ -19,31 +19,13 @@
             <form data-bind="submit: submit">
                 <div class="row">
                     <div class="col-md-5 col-sm-12">
-                        <select data-bind="value: coinSource, disable: loading" class="form-select">
-                            <option value="AUD">AUD - Dólar Australiano</option>
-                            <option value="BRL">BRL - Real Brasileiro</option>
-                            <option value="CAD">CAD - Dólar Canadense</option>
-                            <option value="EUR">EUR - Euro</option>
-                            <option value="GBP">GBP - Libra Esterlina</option>
-                            <option value="JPY">JPY - Iene Japonês</option>
-                            <option value="MXN">MXN - Peso Mexicano</option>
-                            <option value="USD">USD - Dólar Americano</option>
-                        </select>
+                        <select data-bind="options: coins, optionsText: 'name', optionsValue: 'id', value: coinSource, disable: loading" class="form-select"></select>
                     </div>
                     <div class="col-md-2 col-sm-12 d-flex justify-content-center">
                         <i class="bi bi-arrow-left-right"></i>
                     </div>
                     <div class="col-md-5 col-sm-12">
-                        <select data-bind="value: coinReceiver, disable: loading" class="form-select">
-                            <option value="AUD">AUD - Dólar Australiano</option>
-                            <option value="BRL">BRL - Real Brasileiro</option>
-                            <option value="CAD">CAD - Dólar Canadense</option>
-                            <option value="EUR">EUR - Euro</option>
-                            <option value="GBP">GBP - Libra Esterlina</option>
-                            <option value="JPY">JPY - Iene Japonês</option>
-                            <option value="MXN">MXN - Peso Mexicano</option>
-                            <option value="USD">USD - Dólar Americano</option>
-                        </select>
+                        <select data-bind="options: coins, optionsText: 'name', optionsValue: 'id', value: coinReceiver, disable: loading" class="form-select"></select>
                     </div>
                 </div>
                 <div class="row">
