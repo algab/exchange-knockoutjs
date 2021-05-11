@@ -22,7 +22,7 @@
                         <select data-bind="options: coins, optionsText: 'name', optionsValue: 'id', value: coinSource, disable: loading" class="form-select"></select>
                     </div>
                     <div class="col-md-2 col-sm-12 d-flex justify-content-center">
-                        <i class="bi bi-arrow-left-right"></i>
+                        <i class="bi bi-arrow-left-right change-coin" data-bind="click: changeCoin" data-toggle="tooltip" data-placement="top" title="Trocar Moeda"></i>
                     </div>
                     <div class="col-md-5 col-sm-12">
                         <select data-bind="options: coins, optionsText: 'name', optionsValue: 'id', value: coinReceiver, disable: loading" class="form-select"></select>
