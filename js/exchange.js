@@ -18,9 +18,16 @@ function ExchangeViewModel() {
     self.result = ko.observable();
     self.loading = ko.observable(false);
 
+    self.changeCoin = function () {
+        let source = self.coinSource();
+        let receiver = self.coinReceiver();
+        self.coinReceiver(source);
+        self.coinSource(receiver);
+    };
+
     self.submit = function () {
         self.loading(true);
-        fetch(`https://api.exchangeratesapi.io/latest?base=${self.coinSource()}`)
+        fetch(`https://api.ratesapi.io/api/latest?base=${self.coinSource()}`)
         .then(async (resp) => {
             const body = await resp.json();
             const intl = new Intl.NumberFormat('en').format(self.value());
